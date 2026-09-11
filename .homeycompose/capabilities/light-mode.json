@@ -1,0 +1,28 @@
+{
+  "type": "enum",
+  "title": { "en": "Light mode", "fr": "Mode de lumière" },
+  "getable": true,
+  "setable": true,
+  "uiComponent": "picker",
+  "uiQuickAction": false,
+  "uiState": false,
+  "values": [
+    {
+      "id": "SL",
+      "title": { "en": "SL" }
+    },
+    {
+      "id": "FL",
+      "title": { "en": "FL" }
+    },
+    {
+      "id": "BF",
+      "title": { "en": "BF" }
+    },
+
+    {
+      "id": "Light",
+      "title": { "en": "Light" }
+    }
+  ]
+}

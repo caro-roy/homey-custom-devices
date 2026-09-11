@@ -1,0 +1,28 @@
+{
+  "id": "io.carololo.waou",
+  "version": "1.0.0",
+  "compatibility": ">=13.5.0",
+  "sdk": 3,
+  "runtime": "nodejs",
+  "platforms": ["local"],
+  "name": {
+    "en": "Waou",
+    "fr": "Waou"
+  },
+  "description": {
+    "en": "Our personnal little app for all weird and dumb devices.",
+    "fr": "Notre app personnelle pour tous les appareils chelou et bêtes"
+  },
+  "category": "appliances",
+  "permissions": ["homey:manager:ledring", "homey:wireless:ir"],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "author": {
+    "name": "Caroline Roy",
+    "email": "caroline.roy.dev@gmail.com"
+  },
+  "brandColor": "#6856a0"
+}

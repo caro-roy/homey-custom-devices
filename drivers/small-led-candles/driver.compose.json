@@ -1,0 +1,65 @@
+{
+  "name": {
+    "en": "Small LED Candles",
+    "fr": "Petites bougies LED"
+  },
+  "class": "light",
+  "capabilities": ["onoff", "button.lum_down", "button.lum_up", "light-mode"],
+  "capabilitiesOptions": {
+    "button.lum_down": {
+      "title": {
+        "en": "Dimmer",
+        "fr": "Luminosité -"
+      },
+      "maintenanceAction": false
+    },
+    "button.lum_up": {
+      "title": {
+        "en": "Brighter",
+        "fr": "Luminosité +"
+      },
+      "maintenanceAction": false
+    },
+    "light-mode": {
+      "values": [
+        {
+          "id": "SL",
+          "title": { "en": "SL" }
+        },
+        {
+          "id": "FL",
+          "title": { "en": "FL" }
+        },
+        {
+          "id": "BF",
+          "title": { "en": "BF" }
+        },
+
+        {
+          "id": "Light",
+          "title": { "en": "Light" }
+        }
+      ]
+    }
+  },
+  "platforms": ["local"],
+  "connectivity": ["infrared"],
+  "images": {
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "xlarge": "{{driverAssetsPath}}/images/xlarge.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ]
+}
