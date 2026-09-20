@@ -1,0 +1,92 @@
+{
+  "actions": [
+    {
+      "id": "luminosity",
+      "title": {
+        "en": "Dim/Brighten",
+        "fr": "Diminuer/Augmenter la luminosité"
+      },
+      "titleFormatted": {
+        "en": "[[direction]] the brightness",
+        "fr": "[[direction]] la luminosité"
+      },
+      "args": [
+        {
+          "type": "dropdown",
+          "name": "direction",
+          "title": {
+            "en": "Adjust",
+            "fr": "Régler"
+          },
+          "values": [
+            {
+              "id": "up",
+              "label": {
+                "en": "Brighten",
+                "fr": "Augmenter"
+              }
+            },
+            {
+              "id": "down",
+              "label": {
+                "en": "Dim",
+                "fr": "Diminuer"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "light-mode",
+      "title": {
+        "en": "Set the light mode",
+        "fr": "Définir le mode de lumière"
+      },
+      "titleFormatted": {
+        "en": "Set the light mode to [[mode]]",
+        "fr": "Définir le mode de lumière sur [[mode]]"
+      },
+      "args": [
+        {
+          "type": "dropdown",
+          "name": "mode",
+          "title": {
+            "en": "Mode",
+            "fr": "Mode"
+          },
+          "values": [
+            {
+              "id": "SL",
+              "label": {
+                "en": "Slow flickering",
+                "fr": "Lent"
+              }
+            },
+            {
+              "id": "FL",
+              "label": {
+                "en": "Fast flickering",
+                "fr": "Rapide"
+              }
+            },
+            {
+              "id": "BF",
+              "label": {
+                "en": "Breathing",
+                "fr": "Respiration"
+              }
+            },
+            {
+              "id": "Light",
+              "label": {
+                "en": "Steady on",
+                "fr": "Fixe"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

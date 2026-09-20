@@ -31,6 +31,108 @@
     "email": "caroline.roy.dev@gmail.com"
   },
   "brandColor": "#6856a0",
+  "flow": {
+    "actions": [
+      {
+        "id": "luminosity",
+        "title": {
+          "en": "Dim/Brighten",
+          "fr": "Diminuer/Augmenter la luminosité"
+        },
+        "titleFormatted": {
+          "en": "[[direction]] the brightness",
+          "fr": "[[direction]] la luminosité"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=small-led-candles"
+          },
+          {
+            "type": "dropdown",
+            "name": "direction",
+            "title": {
+              "en": "Adjust",
+              "fr": "Régler"
+            },
+            "values": [
+              {
+                "id": "up",
+                "label": {
+                  "en": "Brighten",
+                  "fr": "Augmenter"
+                }
+              },
+              {
+                "id": "down",
+                "label": {
+                  "en": "Dim",
+                  "fr": "Diminuer"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "light-mode",
+        "title": {
+          "en": "Set the light mode",
+          "fr": "Définir le mode de lumière"
+        },
+        "titleFormatted": {
+          "en": "Set the light mode to [[mode]]",
+          "fr": "Définir le mode de lumière sur [[mode]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=small-led-candles"
+          },
+          {
+            "type": "dropdown",
+            "name": "mode",
+            "title": {
+              "en": "Mode",
+              "fr": "Mode"
+            },
+            "values": [
+              {
+                "id": "SL",
+                "label": {
+                  "en": "Slow flickering",
+                  "fr": "Lent"
+                }
+              },
+              {
+                "id": "FL",
+                "label": {
+                  "en": "Fast flickering",
+                  "fr": "Rapide"
+                }
+              },
+              {
+                "id": "BF",
+                "label": {
+                  "en": "Breathing",
+                  "fr": "Respiration"
+                }
+              },
+              {
+                "id": "Light",
+                "label": {
+                  "en": "Steady on",
+                  "fr": "Fixe"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
   "drivers": [
     {
       "name": {
@@ -58,40 +160,6 @@
             "fr": "Luminosité +"
           },
           "maintenanceAction": false
-        },
-        "light-mode": {
-          "values": [
-            {
-              "id": "SL",
-              "title": {
-                "en": "SL"
-              }
-            },
-            {
-              "id": "FL",
-              "title": {
-                "en": "FL"
-              }
-            },
-            {
-              "id": "BF",
-              "title": {
-                "en": "BF"
-              }
-            },
-            {
-              "id": "Light",
-              "title": {
-                "en": "Light"
-              }
-            },
-            {
-              "id": "hum",
-              "title": {
-                "en": "hum"
-              }
-            }
-          ]
         }
       },
       "platforms": [
@@ -126,17 +194,42 @@
       "type": "enum",
       "title": {
         "en": "Light mode",
-        "fr": "Mode de lumière"
+        "fr": "Mode de scintillement"
       },
       "getable": true,
       "setable": true,
       "uiComponent": "picker",
       "uiQuickAction": false,
-      "uiState": true,
+      "uiState": false,
       "values": [
-        "SL",
-        "FL",
-        "BF"
+        {
+          "id": "SL",
+          "title": {
+            "en": "SL",
+            "fr": "Lent"
+          }
+        },
+        {
+          "id": "FL",
+          "title": {
+            "en": "FL",
+            "fr": "Rapide"
+          }
+        },
+        {
+          "id": "BF",
+          "title": {
+            "en": "BF",
+            "fr": "Respiration"
+          }
+        },
+        {
+          "id": "Light",
+          "title": {
+            "en": "Light",
+            "fr": "Fixe"
+          }
+        }
       ]
     }
   },

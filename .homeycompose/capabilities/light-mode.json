@@ -1,6 +1,6 @@
 {
   "type": "enum",
-  "title": { "en": "Light mode", "fr": "Mode de lumière" },
+  "title": { "en": "Light mode", "fr": "Mode de scintillement" },
   "getable": true,
   "setable": true,
   "uiComponent": "picker",
@@ -9,20 +9,20 @@
   "values": [
     {
       "id": "SL",
-      "title": { "en": "SL" }
+      "title": { "en": "SL", "fr": "Lent" }
     },
     {
       "id": "FL",
-      "title": { "en": "FL" }
+      "title": { "en": "FL", "fr": "Rapide" }
     },
     {
       "id": "BF",
-      "title": { "en": "BF" }
+      "title": { "en": "BF", "fr": "Respiration" }
     },
 
     {
       "id": "Light",
-      "title": { "en": "Light" }
+      "title": { "en": "Light", "fr": "Fixe" }
     }
   ]
 }

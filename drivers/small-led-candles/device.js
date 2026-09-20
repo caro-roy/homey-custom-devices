@@ -26,6 +26,15 @@ module.exports = class SmallLEDCandles extends Homey.Device {
     })
   }
 
+  /**
+   * Sends the mode command and keeps the capability value in sync,
+   * so the tile reflects modes set from a Flow.
+   */
+  async setLightMode(mode) {
+    await this.setCapabilityValue('light-mode', mode)
+    await this.sendCmd(`MODE_${mode}`.toUpperCase())
+  }
+
   async sendCmd(cmd) {
     await this.signal.cmd(cmd)
   }

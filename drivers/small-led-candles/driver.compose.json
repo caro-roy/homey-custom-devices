@@ -19,27 +19,6 @@
         "fr": "Luminosité +"
       },
       "maintenanceAction": false
-    },
-    "light-mode": {
-      "values": [
-        {
-          "id": "SL",
-          "title": { "en": "SL" }
-        },
-        {
-          "id": "FL",
-          "title": { "en": "FL" }
-        },
-        {
-          "id": "BF",
-          "title": { "en": "BF" }
-        },
-
-        {
-          "id": "Light",
-          "title": { "en": "Light" }
-        }
-      ]
     }
   },
   "platforms": ["local"],
