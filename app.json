@@ -32,7 +32,333 @@
   },
   "brandColor": "#6856a0",
   "flow": {
+    "triggers": [
+      {
+        "id": "color-changed",
+        "title": {
+          "en": "The color changed",
+          "fr": "La couleur a changé"
+        },
+        "tokens": [
+          {
+            "name": "color",
+            "type": "string",
+            "title": {
+              "en": "Color",
+              "fr": "Couleur"
+            },
+            "example": {
+              "en": "Multicolor",
+              "fr": "Multicolore"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=big-led-candles"
+          }
+        ]
+      }
+    ],
+    "conditions": [
+      {
+        "id": "color-is",
+        "title": {
+          "en": "The color !{{is|is not}} set",
+          "fr": "La couleur !{{est|n'est pas}} réglée"
+        },
+        "titleFormatted": {
+          "en": "The color !{{is|is not}} [[color]]",
+          "fr": "La couleur !{{est|n'est pas}} [[color]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=big-led-candles"
+          },
+          {
+            "type": "dropdown",
+            "name": "color",
+            "title": {
+              "en": "Color",
+              "fr": "Couleur"
+            },
+            "values": [
+              {
+                "id": "MULTICOLOR",
+                "label": {
+                  "en": "Multicolor",
+                  "fr": "Multicolore"
+                }
+              },
+              {
+                "id": "COLOR_ORANGE",
+                "label": {
+                  "en": "Orange",
+                  "fr": "Orange"
+                }
+              },
+              {
+                "id": "COLOR_APPLE_GREEN",
+                "label": {
+                  "en": "Apple green",
+                  "fr": "Vert pomme"
+                }
+              },
+              {
+                "id": "COLOR_NAVY_BLUE",
+                "label": {
+                  "en": "Navy blue",
+                  "fr": "Bleu marine"
+                }
+              },
+              {
+                "id": "COLOR_WHITE",
+                "label": {
+                  "en": "White",
+                  "fr": "Blanc"
+                }
+              },
+              {
+                "id": "COLOR_TEAL",
+                "label": {
+                  "en": "Teal",
+                  "fr": "Vert canard"
+                }
+              },
+              {
+                "id": "COLOR_LILAC",
+                "label": {
+                  "en": "Lilac",
+                  "fr": "Lilas"
+                }
+              },
+              {
+                "id": "COLOR_YELLOW",
+                "label": {
+                  "en": "Yellow",
+                  "fr": "Jaune"
+                }
+              },
+              {
+                "id": "COLOR_CYAN",
+                "label": {
+                  "en": "Cyan",
+                  "fr": "Cyan"
+                }
+              },
+              {
+                "id": "COLOR_PINK",
+                "label": {
+                  "en": "Pink",
+                  "fr": "Rose"
+                }
+              },
+              {
+                "id": "COLOR_LIGHT_PINK",
+                "label": {
+                  "en": "Light pink",
+                  "fr": "Rose clair"
+                }
+              },
+              {
+                "id": "COLOR_MINT_BLUE",
+                "label": {
+                  "en": "Mint blue",
+                  "fr": "Bleu menthe"
+                }
+              },
+              {
+                "id": "COLOR_MAGENTA",
+                "label": {
+                  "en": "Magenta",
+                  "fr": "Magenta"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
     "actions": [
+      {
+        "id": "set-color",
+        "title": {
+          "en": "Set the color",
+          "fr": "Définir la couleur"
+        },
+        "titleFormatted": {
+          "en": "Set the color to [[color]]",
+          "fr": "Définir la couleur sur [[color]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=big-led-candles"
+          },
+          {
+            "type": "dropdown",
+            "name": "color",
+            "title": {
+              "en": "Color",
+              "fr": "Couleur"
+            },
+            "values": [
+              {
+                "id": "MULTICOLOR",
+                "label": {
+                  "en": "Multicolor",
+                  "fr": "Multicolore"
+                }
+              },
+              {
+                "id": "COLOR_ORANGE",
+                "label": {
+                  "en": "Orange",
+                  "fr": "Orange"
+                }
+              },
+              {
+                "id": "COLOR_APPLE_GREEN",
+                "label": {
+                  "en": "Apple green",
+                  "fr": "Vert pomme"
+                }
+              },
+              {
+                "id": "COLOR_NAVY_BLUE",
+                "label": {
+                  "en": "Navy blue",
+                  "fr": "Bleu marine"
+                }
+              },
+              {
+                "id": "COLOR_WHITE",
+                "label": {
+                  "en": "White",
+                  "fr": "Blanc"
+                }
+              },
+              {
+                "id": "COLOR_TEAL",
+                "label": {
+                  "en": "Teal",
+                  "fr": "Vert canard"
+                }
+              },
+              {
+                "id": "COLOR_LILAC",
+                "label": {
+                  "en": "Lilac",
+                  "fr": "Lilas"
+                }
+              },
+              {
+                "id": "COLOR_YELLOW",
+                "label": {
+                  "en": "Yellow",
+                  "fr": "Jaune"
+                }
+              },
+              {
+                "id": "COLOR_CYAN",
+                "label": {
+                  "en": "Cyan",
+                  "fr": "Cyan"
+                }
+              },
+              {
+                "id": "COLOR_PINK",
+                "label": {
+                  "en": "Pink",
+                  "fr": "Rose"
+                }
+              },
+              {
+                "id": "COLOR_LIGHT_PINK",
+                "label": {
+                  "en": "Light pink",
+                  "fr": "Rose clair"
+                }
+              },
+              {
+                "id": "COLOR_MINT_BLUE",
+                "label": {
+                  "en": "Mint blue",
+                  "fr": "Bleu menthe"
+                }
+              },
+              {
+                "id": "COLOR_MAGENTA",
+                "label": {
+                  "en": "Magenta",
+                  "fr": "Magenta"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "next-mode",
+        "title": {
+          "en": "Switch to the next mode",
+          "fr": "Passer au mode suivant"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=big-led-candles"
+          }
+        ]
+      },
+      {
+        "id": "timer",
+        "title": {
+          "en": "Set the timer",
+          "fr": "Définir la minuterie"
+        },
+        "titleFormatted": {
+          "en": "Set the timer to [[duration]]",
+          "fr": "Définir la minuterie sur [[duration]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=big-led-candles"
+          },
+          {
+            "type": "dropdown",
+            "name": "duration",
+            "title": {
+              "en": "Duration",
+              "fr": "Durée"
+            },
+            "values": [
+              {
+                "id": "4H",
+                "label": {
+                  "en": "4 hours",
+                  "fr": "4 heures"
+                }
+              },
+              {
+                "id": "8H",
+                "label": {
+                  "en": "8 hours",
+                  "fr": "8 heures"
+                }
+              }
+            ]
+          }
+        ]
+      },
       {
         "id": "luminosity",
         "title": {
@@ -136,6 +462,54 @@
   "drivers": [
     {
       "name": {
+        "en": "Big LED Candles",
+        "fr": "Grandes bougies LED"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "light_hue",
+        "light_saturation",
+        "candle-color",
+        "button.mode"
+      ],
+      "capabilitiesOptions": {
+        "button.mode": {
+          "title": {
+            "en": "Next mode",
+            "fr": "Mode suivant"
+          },
+          "maintenanceAction": false
+        }
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "infrared"
+      ],
+      "images": {
+        "small": "/drivers/big-led-candles/assets/images/small.png",
+        "large": "/drivers/big-led-candles/assets/images/large.png",
+        "xlarge": "/drivers/big-led-candles/assets/images/xlarge.png"
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "id": "big-led-candles"
+    },
+    {
+      "name": {
         "en": "Small LED Candles",
         "fr": "Petites bougies LED"
       },
@@ -189,7 +563,142 @@
       "id": "small-led-candles"
     }
   ],
+  "widgets": {
+    "color-picker": {
+      "name": {
+        "en": "Candle colors",
+        "fr": "Couleurs des bougies"
+      },
+      "height": 190,
+      "transparent": false,
+      "devices": {
+        "type": "app",
+        "singular": true,
+        "filter": {
+          "class": "light",
+          "capabilities": "candle-color"
+        }
+      },
+      "api": {
+        "getState": {
+          "method": "GET",
+          "path": "/state"
+        },
+        "setColor": {
+          "method": "POST",
+          "path": "/color"
+        }
+      },
+      "id": "color-picker",
+      "settings": []
+    }
+  },
   "capabilities": {
+    "candle-color": {
+      "type": "enum",
+      "title": {
+        "en": "Color",
+        "fr": "Couleur"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "picker",
+      "uiQuickAction": false,
+      "uiState": false,
+      "values": [
+        {
+          "id": "MULTICOLOR",
+          "title": {
+            "en": "Multicolor",
+            "fr": "Multicolore"
+          }
+        },
+        {
+          "id": "COLOR_ORANGE",
+          "title": {
+            "en": "Orange",
+            "fr": "Orange"
+          }
+        },
+        {
+          "id": "COLOR_APPLE_GREEN",
+          "title": {
+            "en": "Apple green",
+            "fr": "Vert pomme"
+          }
+        },
+        {
+          "id": "COLOR_NAVY_BLUE",
+          "title": {
+            "en": "Navy blue",
+            "fr": "Bleu marine"
+          }
+        },
+        {
+          "id": "COLOR_WHITE",
+          "title": {
+            "en": "White",
+            "fr": "Blanc"
+          }
+        },
+        {
+          "id": "COLOR_TEAL",
+          "title": {
+            "en": "Teal",
+            "fr": "Vert canard"
+          }
+        },
+        {
+          "id": "COLOR_LILAC",
+          "title": {
+            "en": "Lilac",
+            "fr": "Lilas"
+          }
+        },
+        {
+          "id": "COLOR_YELLOW",
+          "title": {
+            "en": "Yellow",
+            "fr": "Jaune"
+          }
+        },
+        {
+          "id": "COLOR_CYAN",
+          "title": {
+            "en": "Cyan",
+            "fr": "Cyan"
+          }
+        },
+        {
+          "id": "COLOR_PINK",
+          "title": {
+            "en": "Pink",
+            "fr": "Rose"
+          }
+        },
+        {
+          "id": "COLOR_LIGHT_PINK",
+          "title": {
+            "en": "Light pink",
+            "fr": "Rose clair"
+          }
+        },
+        {
+          "id": "COLOR_MINT_BLUE",
+          "title": {
+            "en": "Mint blue",
+            "fr": "Bleu menthe"
+          }
+        },
+        {
+          "id": "COLOR_MAGENTA",
+          "title": {
+            "en": "Magenta",
+            "fr": "Magenta"
+          }
+        }
+      ]
+    },
     "light-mode": {
       "type": "enum",
       "title": {
@@ -235,6 +744,29 @@
   },
   "signals": {
     "ir": {
+      "big-led-candles": {
+        "type": "prontohex",
+        "cmds": {
+          "ON": "0000 006D 0022 0000 0151 00AA 0016 0015 0016 0015 0016 0015 0016 0016 0015 0015 0016 0016 0015 0016 0015 003F 0016 003F 0016 003F 0016 003F 0017 003E 0016 003F 0016 0040 0016 003F 0016 0015 0016 0015 0016 003F 0016 0015 0016 0015 0016 003F 0016 0015 0016 0015 0016 0015 0016 003F 0016 0015 0016 003F 0016 0040 0016 0015 0016 003F 0016 003F 0016 003F 0017 0616",
+          "OFF": "0000 006D 0022 0000 014F 00AE 0013 0017 0014 0017 0014 0017 0013 0018 0014 0017 0014 0018 0013 0017 0014 0042 0014 0042 0014 0042 0013 0043 0013 0044 0013 0042 0013 0043 0014 0043 0012 0019 0012 0019 0012 0043 0013 0019 0012 0043 0013 0043 0013 0018 0013 0019 0012 0019 0013 0043 0012 0019 0012 0043 0013 0019 0013 0017 0013 0043 0013 0043 0014 0043 0012 0616",
+          "MODE": "0000 006D 0022 0000 0151 00AA 0015 0015 0015 0015 0015 0015 0016 0015 0016 0015 0016 0015 0015 0015 0015 0040 0015 0040 0015 0040 0015 0040 0016 0040 0016 0040 0016 0040 0016 0040 0015 0015 0015 0015 0015 0040 0016 0040 0016 0040 0016 0040 0015 0015 0015 0015 0016 0015 0016 0040 0015 0015 0016 0015 0016 0015 0016 0015 0016 0040 0016 0040 0016 0040 0015 0616",
+          "TIMER_4H": "0000 006D 0022 0000 0151 00AA 0016 0015 0015 0015 0016 0015 0015 0015 0016 0015 0016 0015 0015 0015 0015 0040 0014 0041 0015 0040 0015 0040 0016 0040 0015 0040 0015 0040 0015 0040 0015 0015 0015 0040 0015 0015 0015 0015 0015 0015 0015 0015 0015 0015 0015 0015 0015 0015 0015 0015 0014 0041 0015 0040 0015 0040 0015 0040 0015 0040 0015 0040 0015 0040 0014 0616",
+          "TIMER_8H": "0000 006D 0022 0000 0150 00AC 0015 0015 0014 0016 0014 0016 0014 0016 0014 0016 0014 0016 0014 0016 0014 0041 0015 0040 0014 0041 0014 0041 0014 0041 0014 0041 0014 0041 0014 0041 0014 0017 0014 0016 0014 0041 0015 0015 0014 0016 0014 0017 0014 0017 0014 0016 0014 0017 0014 0041 0014 0016 0014 0041 0015 0040 0014 0041 0014 0041 0014 0041 0014 0041 0014 0616",
+          "MULTICOLOR": "0000 006D 0022 0000 0151 00AA 0014 0016 0015 0015 0015 0015 0014 0016 0014 0017 0015 0015 0014 0016 0015 0040 0014 0041 0015 0040 0015 0040 0015 0040 0015 0040 0014 0041 0015 0040 0014 0017 0015 0040 0015 0040 0015 0015 0014 0016 0015 0015 0015 0015 0015 0015 0015 0015 0014 0016 0015 0015 0015 0040 0015 0040 0015 0040 0015 0040 0015 0040 0015 0040 0015 0616",
+          "COLOR_ORANGE": "0000 006D 0022 0000 0151 00AA 0015 0015 0015 0015 0015 0015 0015 0015 0015 0015 0015 0015 0015 0015 0015 0040 0015 0040 0016 0040 0015 0040 0014 0041 0015 0040 0015 0040 0015 0040 0016 0015 0015 0015 0015 0015 0015 0040 0015 0015 0015 0015 0015 0015 0014 0016 0015 0015 0015 0040 0014 0041 0014 0016 0015 0040 0015 0040 0015 0040 0015 0040 0015 0040 0015 0616",
+          "COLOR_APPLE_GREEN": "0000 006D 0022 0000 0152 00AA 0015 0015 0016 0015 0015 0015 0015 0015 0015 0015 0015 0015 0015 0015 0015 0040 0015 0040 0014 0041 0015 0040 0016 0040 0015 0040 0015 0040 0016 0040 0016 0015 0015 0040 0016 0015 0016 0040 0016 0015 0016 0015 0016 0015 0015 0015 0016 0015 0016 0015 0016 0040 0016 0015 0016 0040 0016 0040 0016 0040 0016 0040 0016 0040 0016 0616",
+          "COLOR_NAVY_BLUE": "0000 006D 0022 0000 0151 00AA 0015 0015 0016 0015 0015 0015 0015 0015 0015 0015 0016 0015 0015 0015 0015 0040 0014 0041 0015 0040 0015 0040 0015 0040 0015 0040 0014 0041 0015 0040 0015 0015 0015 0015 0016 0040 0015 0040 0015 0015 0016 0015 0016 0015 0016 0015 0016 0015 0016 0040 0015 0015 0015 0015 0015 0040 0015 0040 0016 0040 0016 0040 0016 0040 0015 0616",
+          "COLOR_WHITE": "0000 006D 0022 0000 014F 00AC 0014 0017 0014 0017 0014 0016 0014 0017 0014 0016 0014 0017 0014 0017 0014 0041 0014 0041 0014 0041 0015 0040 0014 0041 0014 0041 0014 0041 0014 0041 0014 0017 0014 0041 0014 0041 0014 0041 0014 0017 0014 0017 0014 0017 0014 0017 0014 0017 0014 0017 0014 0017 0013 0018 0014 0042 0014 0042 0014 0042 0014 0043 0013 0042 0014 0616",
+          "COLOR_TEAL": "0000 006D 0022 0000 0152 00A9 0016 0015 0016 0015 0016 0015 0016 0015 0016 0015 0016 0015 0016 0015 0016 003F 0016 003F 0016 0040 0016 003F 0016 0040 0016 003F 0016 0040 0016 0040 0016 0015 0016 0015 0016 0015 0016 0015 0016 0040 0016 0015 0016 0015 0017 0014 0016 0015 0016 0040 0016 0040 0016 0040 0016 0015 0016 0040 0017 003F 0017 003F 0016 0040 0016 0616",
+          "COLOR_LILAC": "0000 006D 0022 0000 007E 0008 00C6 00AF 0011 001C 000C 001B 0012 001A 0011 001D 000D 001E 000B 001D 0010 001D 000F 0045 0010 0045 0012 0046 000B 009F 000E 004A 000E 0046 000F 0046 0011 0019 0012 0044 0012 001A 0011 001B 000F 0046 0011 001A 0011 001B 0005 0025 0010 001B 0011 001A 0010 0045 0012 0049 000D 001B 0010 0047 000E 0045 0012 0044 0012 0045 0011 0616",
+          "COLOR_YELLOW": "0000 006D 0022 0000 0151 00AB 0014 0017 0015 0016 0014 0017 0014 0017 0014 0017 0015 0016 0014 0017 0015 0040 0014 0041 0014 0041 0014 0041 0015 0040 0014 0041 0014 0041 0014 0041 0014 0016 0014 0017 0014 0041 0015 0015 0015 0040 0014 0016 0015 0015 0014 0016 0015 0015 0015 0040 0015 0015 0014 0041 0014 0016 0015 0040 0014 0041 0015 0040 0014 0041 0014 0616",
+          "COLOR_CYAN": "0000 006D 0022 0000 0151 00AA 0015 0015 0016 0015 0015 0015 0016 0015 0015 0015 0016 0015 0015 0015 0015 0040 0015 0040 0015 0040 0015 0040 0015 0040 0015 0040 0015 0040 0015 0040 0015 0015 0015 0040 0015 0040 0015 0015 0015 0040 0015 0040 0015 0015 0015 0015 0015 0016 0015 0015 0015 0015 0015 0040 0014 0016 0014 0017 0014 0041 0014 0041 0015 0040 0014 0616",
+          "COLOR_PINK": "0000 006D 0020 0000 014B 00B0 0010 001D 000E 0020 000C 001C 000E 001E 000E 001A 0011 001C 000F 001D 000E 00A6 004A 0012 0046 000F 0040 0012 0044 0014 0041 0014 0044 0012 0016 0012 0047 000F 0043 0011 004D 000B 0043 000C 004B 000F 0018 0014 0019 0012 001A 000C 0021 000C 0023 000C 0013 0014 0018 000F 001E 000D 0045 0010 0044 0013 0045 0616",
+          "COLOR_LIGHT_PINK": "0000 006D 0022 0000 014F 00AC 0014 0016 0014 0017 0014 0017 0014 0017 0014 0017 0014 0017 0014 0017 0014 0041 0014 0041 0014 0041 0014 0041 0014 0041 0014 0041 0014 0041 0014 0041 0014 0017 0014 0017 0014 0017 0014 0041 0014 0041 0014 0017 0014 0017 0014 0017 0014 0017 0014 0041 0014 0041 0014 0017 0014 0016 0014 0041 0014 0041 0014 0041 0014 0041 0014 0616",
+          "COLOR_MINT_BLUE": "0000 006D 0022 0000 014F 00AC 0014 0016 0015 0015 0014 0016 0014 0016 0014 0016 0014 0016 0015 0015 0015 0040 0015 0040 0015 0040 0015 0040 0015 0040 0015 0040 0015 0040 0015 0040 0015 0015 0015 0040 0015 0015 0015 0040 0015 0040 0015 0015 0015 0015 0015 0015 0015 0015 0015 0015 0015 0040 0015 0015 0014 0016 0015 0040 0015 0040 0015 0040 0015 0041 0015 0616",
+          "COLOR_MAGENTA": "0000 006D 0022 0000 014F 00AC 0013 0019 0012 0019 0013 0018 0013 0018 0012 0018 0013 0019 0012 0019 0012 0043 0012 0044 0012 0044 0012 0043 0013 0044 0012 0044 0012 0044 0012 0044 0012 0018 0013 0019 0012 0044 0013 0043 0012 0043 0013 0019 0012 0019 0012 0019 0013 0018 0012 0044 0012 0018 0014 0018 0013 0018 0013 0043 0012 0044 0012 0044 0013 0043 0012 0616"
+        }
+      },
       "small-led-candles": {
         "type": "prontohex",
         "cmds": {

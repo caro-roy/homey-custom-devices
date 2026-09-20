@@ -1,0 +1,26 @@
+{
+  "name": {
+    "en": "Candle colors",
+    "fr": "Couleurs des bougies"
+  },
+  "height": 190,
+  "transparent": false,
+  "devices": {
+    "type": "app",
+    "singular": true,
+    "filter": {
+      "class": "light",
+      "capabilities": "candle-color"
+    }
+  },
+  "api": {
+    "getState": {
+      "method": "GET",
+      "path": "/state"
+    },
+    "setColor": {
+      "method": "POST",
+      "path": "/color"
+    }
+  }
+}

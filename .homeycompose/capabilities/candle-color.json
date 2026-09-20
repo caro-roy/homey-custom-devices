@@ -1,0 +1,105 @@
+{
+  "type": "enum",
+  "title": {
+    "en": "Color",
+    "fr": "Couleur"
+  },
+  "getable": true,
+  "setable": true,
+  "uiComponent": "picker",
+  "uiQuickAction": false,
+  "uiState": false,
+  "values": [
+    {
+      "id": "MULTICOLOR",
+      "title": {
+        "en": "Multicolor",
+        "fr": "Multicolore"
+      }
+    },
+    {
+      "id": "COLOR_ORANGE",
+      "title": {
+        "en": "Orange",
+        "fr": "Orange"
+      }
+    },
+    {
+      "id": "COLOR_APPLE_GREEN",
+      "title": {
+        "en": "Apple green",
+        "fr": "Vert pomme"
+      }
+    },
+    {
+      "id": "COLOR_NAVY_BLUE",
+      "title": {
+        "en": "Navy blue",
+        "fr": "Bleu marine"
+      }
+    },
+    {
+      "id": "COLOR_WHITE",
+      "title": {
+        "en": "White",
+        "fr": "Blanc"
+      }
+    },
+    {
+      "id": "COLOR_TEAL",
+      "title": {
+        "en": "Teal",
+        "fr": "Vert canard"
+      }
+    },
+    {
+      "id": "COLOR_LILAC",
+      "title": {
+        "en": "Lilac",
+        "fr": "Lilas"
+      }
+    },
+    {
+      "id": "COLOR_YELLOW",
+      "title": {
+        "en": "Yellow",
+        "fr": "Jaune"
+      }
+    },
+    {
+      "id": "COLOR_CYAN",
+      "title": {
+        "en": "Cyan",
+        "fr": "Cyan"
+      }
+    },
+    {
+      "id": "COLOR_PINK",
+      "title": {
+        "en": "Pink",
+        "fr": "Rose"
+      }
+    },
+    {
+      "id": "COLOR_LIGHT_PINK",
+      "title": {
+        "en": "Light pink",
+        "fr": "Rose clair"
+      }
+    },
+    {
+      "id": "COLOR_MINT_BLUE",
+      "title": {
+        "en": "Mint blue",
+        "fr": "Bleu menthe"
+      }
+    },
+    {
+      "id": "COLOR_MAGENTA",
+      "title": {
+        "en": "Magenta",
+        "fr": "Magenta"
+      }
+    }
+  ]
+}

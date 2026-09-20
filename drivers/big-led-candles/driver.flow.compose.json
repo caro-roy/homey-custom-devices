@@ -1,0 +1,301 @@
+{
+  "triggers": [
+    {
+      "id": "color-changed",
+      "title": {
+        "en": "The color changed",
+        "fr": "La couleur a changé"
+      },
+      "tokens": [
+        {
+          "name": "color",
+          "type": "string",
+          "title": {
+            "en": "Color",
+            "fr": "Couleur"
+          },
+          "example": {
+            "en": "Multicolor",
+            "fr": "Multicolore"
+          }
+        }
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "id": "color-is",
+      "title": {
+        "en": "The color !{{is|is not}} set",
+        "fr": "La couleur !{{est|n'est pas}} réglée"
+      },
+      "titleFormatted": {
+        "en": "The color !{{is|is not}} [[color]]",
+        "fr": "La couleur !{{est|n'est pas}} [[color]]"
+      },
+      "args": [
+        {
+          "type": "dropdown",
+          "name": "color",
+          "title": {
+            "en": "Color",
+            "fr": "Couleur"
+          },
+          "values": [
+            {
+              "id": "MULTICOLOR",
+              "label": {
+                "en": "Multicolor",
+                "fr": "Multicolore"
+              }
+            },
+            {
+              "id": "COLOR_ORANGE",
+              "label": {
+                "en": "Orange",
+                "fr": "Orange"
+              }
+            },
+            {
+              "id": "COLOR_APPLE_GREEN",
+              "label": {
+                "en": "Apple green",
+                "fr": "Vert pomme"
+              }
+            },
+            {
+              "id": "COLOR_NAVY_BLUE",
+              "label": {
+                "en": "Navy blue",
+                "fr": "Bleu marine"
+              }
+            },
+            {
+              "id": "COLOR_WHITE",
+              "label": {
+                "en": "White",
+                "fr": "Blanc"
+              }
+            },
+            {
+              "id": "COLOR_TEAL",
+              "label": {
+                "en": "Teal",
+                "fr": "Vert canard"
+              }
+            },
+            {
+              "id": "COLOR_LILAC",
+              "label": {
+                "en": "Lilac",
+                "fr": "Lilas"
+              }
+            },
+            {
+              "id": "COLOR_YELLOW",
+              "label": {
+                "en": "Yellow",
+                "fr": "Jaune"
+              }
+            },
+            {
+              "id": "COLOR_CYAN",
+              "label": {
+                "en": "Cyan",
+                "fr": "Cyan"
+              }
+            },
+            {
+              "id": "COLOR_PINK",
+              "label": {
+                "en": "Pink",
+                "fr": "Rose"
+              }
+            },
+            {
+              "id": "COLOR_LIGHT_PINK",
+              "label": {
+                "en": "Light pink",
+                "fr": "Rose clair"
+              }
+            },
+            {
+              "id": "COLOR_MINT_BLUE",
+              "label": {
+                "en": "Mint blue",
+                "fr": "Bleu menthe"
+              }
+            },
+            {
+              "id": "COLOR_MAGENTA",
+              "label": {
+                "en": "Magenta",
+                "fr": "Magenta"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "id": "set-color",
+      "title": {
+        "en": "Set the color",
+        "fr": "Définir la couleur"
+      },
+      "titleFormatted": {
+        "en": "Set the color to [[color]]",
+        "fr": "Définir la couleur sur [[color]]"
+      },
+      "args": [
+        {
+          "type": "dropdown",
+          "name": "color",
+          "title": {
+            "en": "Color",
+            "fr": "Couleur"
+          },
+          "values": [
+            {
+              "id": "MULTICOLOR",
+              "label": {
+                "en": "Multicolor",
+                "fr": "Multicolore"
+              }
+            },
+            {
+              "id": "COLOR_ORANGE",
+              "label": {
+                "en": "Orange",
+                "fr": "Orange"
+              }
+            },
+            {
+              "id": "COLOR_APPLE_GREEN",
+              "label": {
+                "en": "Apple green",
+                "fr": "Vert pomme"
+              }
+            },
+            {
+              "id": "COLOR_NAVY_BLUE",
+              "label": {
+                "en": "Navy blue",
+                "fr": "Bleu marine"
+              }
+            },
+            {
+              "id": "COLOR_WHITE",
+              "label": {
+                "en": "White",
+                "fr": "Blanc"
+              }
+            },
+            {
+              "id": "COLOR_TEAL",
+              "label": {
+                "en": "Teal",
+                "fr": "Vert canard"
+              }
+            },
+            {
+              "id": "COLOR_LILAC",
+              "label": {
+                "en": "Lilac",
+                "fr": "Lilas"
+              }
+            },
+            {
+              "id": "COLOR_YELLOW",
+              "label": {
+                "en": "Yellow",
+                "fr": "Jaune"
+              }
+            },
+            {
+              "id": "COLOR_CYAN",
+              "label": {
+                "en": "Cyan",
+                "fr": "Cyan"
+              }
+            },
+            {
+              "id": "COLOR_PINK",
+              "label": {
+                "en": "Pink",
+                "fr": "Rose"
+              }
+            },
+            {
+              "id": "COLOR_LIGHT_PINK",
+              "label": {
+                "en": "Light pink",
+                "fr": "Rose clair"
+              }
+            },
+            {
+              "id": "COLOR_MINT_BLUE",
+              "label": {
+                "en": "Mint blue",
+                "fr": "Bleu menthe"
+              }
+            },
+            {
+              "id": "COLOR_MAGENTA",
+              "label": {
+                "en": "Magenta",
+                "fr": "Magenta"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "next-mode",
+      "title": {
+        "en": "Switch to the next mode",
+        "fr": "Passer au mode suivant"
+      }
+    },
+    {
+      "id": "timer",
+      "title": {
+        "en": "Set the timer",
+        "fr": "Définir la minuterie"
+      },
+      "titleFormatted": {
+        "en": "Set the timer to [[duration]]",
+        "fr": "Définir la minuterie sur [[duration]]"
+      },
+      "args": [
+        {
+          "type": "dropdown",
+          "name": "duration",
+          "title": {
+            "en": "Duration",
+            "fr": "Durée"
+          },
+          "values": [
+            {
+              "id": "4H",
+              "label": {
+                "en": "4 hours",
+                "fr": "4 heures"
+              }
+            },
+            {
+              "id": "8H",
+              "label": {
+                "en": "8 hours",
+                "fr": "8 heures"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

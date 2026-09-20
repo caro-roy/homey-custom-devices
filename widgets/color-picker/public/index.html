@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script type="text/javascript" src="/homey.js" data-origin="widget"></script>
+    <style>
+      :root {
+        --swatch-size: 40px;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        color: var(--homey-text-color, #222);
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, var(--swatch-size));
+        gap: 12px;
+        justify-content: center;
+        padding: 16px;
+      }
+
+      .swatch {
+        width: var(--swatch-size);
+        height: var(--swatch-size);
+        padding: 0;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        background: var(--swatch-color);
+        box-shadow:
+          inset 0 0 0 1px rgba(0, 0, 0, 0.18),
+          0 1px 3px rgba(0, 0, 0, 0.2);
+        transition: transform 120ms ease;
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      .swatch:active {
+        transform: scale(0.9);
+      }
+
+      .swatch.selected {
+        outline: 3px solid var(--homey-color-blue, #2ea1ff);
+        outline-offset: 3px;
+      }
+
+      .swatch[data-id='MULTICOLOR'] {
+        background: conic-gradient(
+          #ff3d3d,
+          #ffd400,
+          #7fdb2e,
+          #00e5ff,
+          #1b2e8c,
+          #e5008f,
+          #ff3d3d
+        );
+      }
+
+      .error {
+        display: none;
+        padding: 0 16px 12px;
+        font-size: 12px;
+        text-align: center;
+        color: var(--homey-color-red, #e03131);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid" id="grid"></div>
+    <div class="error" id="error"></div>
+
+    <script type="text/javascript">
+      const COLORS = [
+        { id: 'MULTICOLOR', hex: null, name: { en: 'Multicolor', fr: 'Multicolore' } },
+        { id: 'COLOR_ORANGE', hex: '#ff7a00', name: { en: 'Orange', fr: 'Orange' } },
+        { id: 'COLOR_APPLE_GREEN', hex: '#7fdb2e', name: { en: 'Apple green', fr: 'Vert pomme' } },
+        { id: 'COLOR_NAVY_BLUE', hex: '#1b2e8c', name: { en: 'Navy blue', fr: 'Bleu marine' } },
+        { id: 'COLOR_WHITE', hex: '#ffffff', name: { en: 'White', fr: 'Blanc' } },
+        { id: 'COLOR_TEAL', hex: '#0e7c7b', name: { en: 'Teal', fr: 'Vert canard' } },
+        { id: 'COLOR_LILAC', hex: '#c8a2e0', name: { en: 'Lilac', fr: 'Lilas' } },
+        { id: 'COLOR_YELLOW', hex: '#ffd400', name: { en: 'Yellow', fr: 'Jaune' } },
+        { id: 'COLOR_CYAN', hex: '#00e5ff', name: { en: 'Cyan', fr: 'Cyan' } },
+        { id: 'COLOR_PINK', hex: '#ff3d9e', name: { en: 'Pink', fr: 'Rose' } },
+        { id: 'COLOR_LIGHT_PINK', hex: '#ffb6d5', name: { en: 'Light pink', fr: 'Rose clair' } },
+        { id: 'COLOR_MINT_BLUE', hex: '#7fffd4', name: { en: 'Mint blue', fr: 'Bleu menthe' } },
+        { id: 'COLOR_MAGENTA', hex: '#e5008f', name: { en: 'Magenta', fr: 'Magenta' } },
+      ]
+
+      function onHomeyReady(Homey) {
+        const grid = document.getElementById('grid')
+        const errorEl = document.getElementById('error')
+        const deviceId = Homey.getDeviceIds()[0]
+        const buttons = new Map()
+
+        function showError(err) {
+          errorEl.textContent = err.message || String(err)
+          errorEl.style.display = 'block'
+        }
+
+        function select(colorId) {
+          buttons.forEach((button, id) => {
+            button.classList.toggle('selected', id === colorId)
+            button.setAttribute('aria-checked', String(id === colorId))
+          })
+        }
+
+        COLORS.forEach(color => {
+          const button = document.createElement('button')
+          button.className = 'swatch'
+          button.dataset.id = color.id
+          button.setAttribute('role', 'radio')
+          button.setAttribute('aria-checked', 'false')
+          button.title = Homey.__(color.name)
+          button.setAttribute('aria-label', button.title)
+
+          if (color.hex) button.style.setProperty('--swatch-color', color.hex)
+
+          button.addEventListener('click', async () => {
+            Homey.hapticFeedback()
+            errorEl.style.display = 'none'
+            select(color.id)
+
+            try {
+              await Homey.api('POST', '/color', { deviceId, color: color.id })
+            } catch (err) {
+              showError(err)
+            }
+          })
+
+          buttons.set(color.id, button)
+          grid.appendChild(button)
+        })
+
+        Homey.on('candle-color', ({ color }) => select(color))
+
+        Homey.api('GET', `/state?deviceId=${encodeURIComponent(deviceId)}`)
+          .then(({ color }) => select(color))
+          .catch(showError)
+          .finally(() => Homey.ready())
+      }
+    </script>
+  </body>
+</html>
