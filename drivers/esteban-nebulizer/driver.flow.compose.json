@@ -1,0 +1,76 @@
+{
+  "actions": [
+    {
+      "id": "toggle-light",
+      "title": {
+        "en": "Toggle the light",
+        "fr": "Allumer/éteindre la lumière"
+      }
+    },
+    {
+      "id": "next-brightness",
+      "title": {
+        "en": "Switch to the next brightness",
+        "fr": "Passer à la luminosité suivante"
+      }
+    },
+    {
+      "id": "next-mist-mode",
+      "title": {
+        "en": "Switch to the next mist mode",
+        "fr": "Passer au mode de brume suivant"
+      }
+    },
+    {
+      "id": "press-button",
+      "title": {
+        "en": "Press a remote button",
+        "fr": "Appuyer sur une touche de la télécommande"
+      },
+      "titleFormatted": {
+        "en": "Press the [[button]] button",
+        "fr": "Appuyer sur la touche [[button]]"
+      },
+      "args": [
+        {
+          "type": "dropdown",
+          "name": "button",
+          "title": {
+            "en": "Button",
+            "fr": "Touche"
+          },
+          "values": [
+            {
+              "id": "POWER",
+              "label": {
+                "en": "Power",
+                "fr": "Marche/Arrêt"
+              }
+            },
+            {
+              "id": "LIGHT",
+              "label": {
+                "en": "Light",
+                "fr": "Lumière"
+              }
+            },
+            {
+              "id": "BRIGHTNESS",
+              "label": {
+                "en": "Brightness",
+                "fr": "Luminosité"
+              }
+            },
+            {
+              "id": "MIST_MODE",
+              "label": {
+                "en": "Mist mode",
+                "fr": "Mode de brume"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

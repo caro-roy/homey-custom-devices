@@ -1,21 +1,34 @@
 {
   "name": {
-    "en": "Big LED Candles",
-    "fr": "Grandes bougies LED"
+    "en": "Esteban Nebulizer",
+    "fr": "Brumisateur Esteban"
   },
-  "class": "light",
+  "class": "fan",
   "capabilities": [
     "onoff",
-    "light_hue",
-    "light_saturation",
-    "candle-color",
-    "button.mode"
+    "button.light",
+    "button.brightness",
+    "button.mist_mode"
   ],
   "capabilitiesOptions": {
-    "button.mode": {
+    "button.light": {
       "title": {
-        "en": "Next mode",
-        "fr": "Mode suivant"
+        "en": "Toggle the light",
+        "fr": "Allumer/éteindre la lumière"
+      },
+      "maintenanceAction": false
+    },
+    "button.brightness": {
+      "title": {
+        "en": "Next brightness",
+        "fr": "Luminosité suivante"
+      },
+      "maintenanceAction": false
+    },
+    "button.mist_mode": {
+      "title": {
+        "en": "Next mist mode",
+        "fr": "Mode de brume suivant"
       },
       "maintenanceAction": false
     }

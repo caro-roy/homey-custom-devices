@@ -360,6 +360,104 @@
         ]
       },
       {
+        "id": "toggle-light",
+        "title": {
+          "en": "Toggle the light",
+          "fr": "Allumer/éteindre la lumière"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=esteban-nebulizer"
+          }
+        ]
+      },
+      {
+        "id": "next-brightness",
+        "title": {
+          "en": "Switch to the next brightness",
+          "fr": "Passer à la luminosité suivante"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=esteban-nebulizer"
+          }
+        ]
+      },
+      {
+        "id": "next-mist-mode",
+        "title": {
+          "en": "Switch to the next mist mode",
+          "fr": "Passer au mode de brume suivant"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=esteban-nebulizer"
+          }
+        ]
+      },
+      {
+        "id": "press-button",
+        "title": {
+          "en": "Press a remote button",
+          "fr": "Appuyer sur une touche de la télécommande"
+        },
+        "titleFormatted": {
+          "en": "Press the [[button]] button",
+          "fr": "Appuyer sur la touche [[button]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=esteban-nebulizer"
+          },
+          {
+            "type": "dropdown",
+            "name": "button",
+            "title": {
+              "en": "Button",
+              "fr": "Touche"
+            },
+            "values": [
+              {
+                "id": "POWER",
+                "label": {
+                  "en": "Power",
+                  "fr": "Marche/Arrêt"
+                }
+              },
+              {
+                "id": "LIGHT",
+                "label": {
+                  "en": "Light",
+                  "fr": "Lumière"
+                }
+              },
+              {
+                "id": "BRIGHTNESS",
+                "label": {
+                  "en": "Brightness",
+                  "fr": "Luminosité"
+                }
+              },
+              {
+                "id": "MIST_MODE",
+                "label": {
+                  "en": "Mist mode",
+                  "fr": "Mode de brume"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
         "id": "luminosity",
         "title": {
           "en": "Dim/Brighten",
@@ -507,6 +605,67 @@
         }
       ],
       "id": "big-led-candles"
+    },
+    {
+      "name": {
+        "en": "Esteban Nebulizer",
+        "fr": "Brumisateur Esteban"
+      },
+      "class": "fan",
+      "capabilities": [
+        "onoff",
+        "button.light",
+        "button.brightness",
+        "button.mist_mode"
+      ],
+      "capabilitiesOptions": {
+        "button.light": {
+          "title": {
+            "en": "Toggle the light",
+            "fr": "Allumer/éteindre la lumière"
+          },
+          "maintenanceAction": false
+        },
+        "button.brightness": {
+          "title": {
+            "en": "Next brightness",
+            "fr": "Luminosité suivante"
+          },
+          "maintenanceAction": false
+        },
+        "button.mist_mode": {
+          "title": {
+            "en": "Next mist mode",
+            "fr": "Mode de brume suivant"
+          },
+          "maintenanceAction": false
+        }
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "infrared"
+      ],
+      "images": {
+        "small": "/drivers/esteban-nebulizer/assets/images/small.png",
+        "large": "/drivers/esteban-nebulizer/assets/images/large.png",
+        "xlarge": "/drivers/esteban-nebulizer/assets/images/xlarge.png"
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "id": "esteban-nebulizer"
     },
     {
       "name": {
@@ -765,6 +924,15 @@
           "COLOR_LIGHT_PINK": "0000 006D 0022 0000 014F 00AC 0014 0016 0014 0017 0014 0017 0014 0017 0014 0017 0014 0017 0014 0017 0014 0041 0014 0041 0014 0041 0014 0041 0014 0041 0014 0041 0014 0041 0014 0041 0014 0017 0014 0017 0014 0017 0014 0041 0014 0041 0014 0017 0014 0017 0014 0017 0014 0017 0014 0041 0014 0041 0014 0017 0014 0016 0014 0041 0014 0041 0014 0041 0014 0041 0014 0616",
           "COLOR_MINT_BLUE": "0000 006D 0022 0000 014F 00AC 0014 0016 0015 0015 0014 0016 0014 0016 0014 0016 0014 0016 0015 0015 0015 0040 0015 0040 0015 0040 0015 0040 0015 0040 0015 0040 0015 0040 0015 0040 0015 0015 0015 0040 0015 0015 0015 0040 0015 0040 0015 0015 0015 0015 0015 0015 0015 0015 0015 0015 0015 0040 0015 0015 0014 0016 0015 0040 0015 0040 0015 0040 0015 0041 0015 0616",
           "COLOR_MAGENTA": "0000 006D 0022 0000 014F 00AC 0013 0019 0012 0019 0013 0018 0013 0018 0012 0018 0013 0019 0012 0019 0012 0043 0012 0044 0012 0044 0012 0043 0013 0044 0012 0044 0012 0044 0012 0044 0012 0018 0013 0019 0012 0044 0013 0043 0012 0043 0013 0019 0012 0019 0012 0019 0013 0018 0012 0044 0012 0018 0014 0018 0013 0018 0013 0043 0012 0044 0012 0044 0013 0043 0012 0616"
+        }
+      },
+      "esteban-nebulizer": {
+        "type": "prontohex",
+        "cmds": {
+          "POWER": "0000 006D 0022 0000 0157 00AB 0017 0015 0016 0015 0016 0015 0016 0015 0016 0015 0016 0015 0016 0015 0016 0040 0016 0040 0016 0040 0015 0040 0016 0040 0015 0040 0015 0040 0015 0040 0016 0016 0015 0016 0016 0016 0015 0040 0015 0016 0015 0016 0015 0016 0015 0040 0015 0041 0015 0041 0015 0040 0015 0017 0015 0040 0015 0041 0015 0041 0015 0016 0015 0016 0015 0616",
+          "LIGHT": "0000 006D 0022 0000 0158 00AB 0016 0015 0015 0015 0015 0016 0015 0016 0015 0016 0015 0015 0015 0016 0015 0040 0015 0040 0016 0040 0016 0040 0015 0040 0015 0040 0016 0040 0015 0040 0015 0016 0015 0016 0015 0016 0015 0016 0015 0016 0015 0016 0015 0016 0015 0016 0015 0040 0016 0040 0015 0040 0015 0040 0015 0040 0015 0040 0015 0040 0015 0041 0015 0016 0015 0616",
+          "BRIGHTNESS": "0000 006D 0022 0000 0157 00AB 0016 0016 0016 0016 0015 0016 0015 0016 0015 0016 0015 0016 0015 0015 0015 0040 0016 0040 0015 0040 0015 0040 0016 0040 0015 0040 0016 0040 0015 0041 0015 0016 0016 0016 0015 0016 0015 0040 0015 0016 0016 0040 0016 0016 0015 0016 0015 0040 0015 0040 0015 0041 0015 0017 0015 0041 0015 0016 0015 0040 0015 0040 0015 0016 0015 0616",
+          "MIST_MODE": "0000 006D 0022 0000 0158 00AB 0016 0015 0016 0016 0016 0016 0016 0015 0016 0016 0015 0015 0015 0016 0015 0040 0016 0040 0015 0040 0015 0040 0015 0040 0015 0040 0015 0040 0016 0040 0015 0016 0015 0016 0015 0040 0015 0040 0015 0016 0015 0040 0014 0016 0015 0016 0015 0040 0015 0040 0015 0016 0015 0016 0015 0040 0015 0016 0015 0040 0015 0040 0014 0016 0015 0616"
         }
       },
       "small-led-candles": {
