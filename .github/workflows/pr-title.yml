@@ -1,0 +1,38 @@
+name: PR title
+
+# Le titre de la PR devient le message du commit squashé sur main :
+# il doit suivre Conventional Commits.
+on:
+  pull_request:
+    types: [opened, edited, synchronize, reopened]
+
+permissions:
+  pull-requests: read
+
+jobs:
+  # Nom du job = nom du check requis par le ruleset (skill github-conventions).
+  pr-title:
+    runs-on: ubuntu-latest
+    steps:
+      # v6.1.2 épinglée par SHA (tag mutable = risque supply chain).
+      - uses: amannn/action-semantic-pull-request@2252a14e810aa9b85c2d560bd7070c802206ecf6 # v6.1.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          types: |
+            feat
+            fix
+            chore
+            docs
+            refactor
+            test
+            ci
+            perf
+            build
+            revert
+          requireScope: false
+          # Sujet en minuscule.
+          subjectPattern: ^(?![A-Z]).+$
+          subjectPatternError: |
+            Le sujet « {subject} » du titre « {title} » doit commencer par une minuscule.
+            Exemple : « feat(storefront): add fabric filters ».
